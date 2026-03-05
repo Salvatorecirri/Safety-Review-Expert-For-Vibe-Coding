@@ -71,3 +71,9 @@ But the moment you deploy, you are no longer “building an app.”
 You are operating an attack surface.
 
 Ship fast. Secure faster.
+
+### Add something like 'Guardrails for catastrophic usage anomalies' to avoid hyperusage by hacker and extra bill of usage if someone discover the key to the API. Considering stolen Gemini (or other) API key causing extra charges. Examples could be:
+ - Automatic hard stop at 5x or 10x historical usage
+ - Forced confirmation of extreme spikes
+ - Temporary freeze pending review
+ - Default per-API spending caps
