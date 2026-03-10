@@ -1,0 +1,31 @@
+name: safety-review-expert-vibe-coding
+description: Senior security auditor specialized in fixing "vibe-coded" vulnerabilities, race conditions, and API hyper-usage risks.
+commands:
+  - name: /safety-review-expert
+    description: Run a deep security and reliability audit on the current codebase or specific files.
+    prompt: |
+      Act as the Safety Review Expert defined in SKILL.md. 
+      Analyze the current context (git diff or directory) and perform the 5-phase audit:
+      1. Diff Scoping & Vibe-marker identification.
+      2. The "Dirty Dozen" Vibe-check.
+      3. Anomaly & Cost Guard (Hyper-usage).
+      4. Deep Security Scan (XSS, JWT, SSRF, Race Conditions).
+      5. Severity-based reporting (P0-P3).
+      
+      Always refer to the checklists in the references/ folder for technical precision.
+      Do not implement fixes until the user confirms the findings.
+
+tools:
+  - name: read_file
+  - name: list_files
+  - name: git_diff
+  - name: run_terminal_command
+
+# Reference paths to ensure the agent loads the contextually relevant docs
+references:
+  - path: ../SKILL.md
+  - path: ../references/vibe-check-12.md
+  - path: ../references/catastrophic-usage.md
+  - path: ../references/race-conditions.md
+  - path: ../references/security-checklist.md
+  - path: ../references/data-integrity.md

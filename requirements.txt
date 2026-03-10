@@ -1,0 +1,8 @@
+# Validation and Helper Scripts
+PyYAML==6.0.1
+pydantic==2.5.2
+typing-extensions==4.8.0
+
+# Optional: Security Linting for Python helpers
+bandit==1.7.5
+safety==2.3.5

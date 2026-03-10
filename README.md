@@ -1,79 +1,54 @@
 # Safety-Review-Expert-Vibe-Coding
-## Most vibe-coded apps work perfectly… until they go public. For an engineer with a bit of experience in coding and security paradigm it is possible to see tonnes of vulnerabilities in Vibe-coded apps that have shipped to production.
 
-This repo represents safety checks for Vibe coding snippet to be sure the most common vulnerability are addressed and revised.
+A collection of production-grade security and reliability skills for Claude Code and other AI agent terminals. Transform "vibe-coded" prototypes into hardened, production-ready applications by automating the discovery of 12 critical vulnerabilities and financial hyper-usage risks
 
-Here are 12 of the most common ones.
+<p align="center">
+  <img src="https://img.shields.io/badge/Skills-3-blue" alt="Scripts Security" />
+  <img src="https://img.shields.io/badge/License-MIT-yellow" alt="MIT License" />
+  <img src="https://img.shields.io/badge/Focus-Vibe_to_Prod-blueviolet" alt="Focus: Vibe to Prod" />
+</p>
 
-[1] Missing authentication
+## Skills
 
-- Problem: Endpoints assumed “only the frontend will call this.”
-- Fix: Require auth on every non-public route. Deny by default.
+| Skill | Description | Install |
+|-------|-------------|---------|
+| [**Safety Review Expert**](./skills/safety-review-expert/) | Senior security auditor hunting for the "Dirty Dozen," race conditions, and AI billing risks | `npx skills add salvatorecirri/Safety-Review-Expert-Vibe-Coding --path skills/safety-review-expert` |
 
-[2] Broken authorisation
+## Quick Start
 
-- Problem: Users could access other users’ data by changing an ID.
-- Fix: Enforce ownership checks server-side on every read and write.
+Install any skill with:
 
-[3] Leaky secrets
+```bash
+npx skills add salvatorecirri/Safety-Review-Expert-Vibe-Coding --path skills/safety-review-expert
+```
 
-- Problem: API keys, JWT secrets, and DB creds lived in code or client bundles.
-- Fix: Move to a secret manager, rotate, and never ship secrets to the browser.
+Then invoke in your agent terminal:
 
-[4] No rate limiting
+```bash
+/safety-review-expert    # Audit current changes for security & cost risks
+```
 
-- Problem: Unlimited requests enabled brute force, scraping, and bill shock.
-- Fix: Rate limit per IP, per user, per token. Add abuse detection.
+## Development Setup (Python helpers)
 
-[5] Wide-open CORS
+If you are contributing new safety modules, set up the validation environment. Some helper scripts (packaging/validation) depend on PyYAML. Set up once per clone:
 
-- Problem: `Access-Control-Allow-Origin: -` plus credentials meant silent data theft.
-- Fix: Allowlist origins. Never use wildcard with credentials.
+```bash
+python -m venv venv
+./venv/Scripts/pip install -r requirements.txt   # Windows
+# or
+source venv/bin/activate && pip install -r requirements.txt  # macOS/Linux
+```
 
-[6] Missing input validation
+## Customizing your Audit (project-brain.md)
 
-- Problem: SQLi, NoSQL injection, and weird payload crashes.
-- Fix: Validate schema at the boundary. Reject unknown fields.
+Each project has unique risks. Customize `skills/safety-review-expert/references/project-brain.md` before your first run:
 
-[7] Unsafe file uploads
+1) **Set Billing Caps**: Define hard-limits for AI API usage to prevent "bill shock."
+2) **Define Stack**: Specify your DB (Prisma/Postgres) and Auth (Clerk/NextAuth).
+3) **Forbidden Patterns**: Document your specific anti-patterns (e.g., "No inline SQL").
+4) **Concurrency Rules**: Set your locking strategy (Optimistic/Pessimistic).
+5) **Save it**: To keep Safety reviewers aligned across runs.
 
-- Problem: Anyone could upload anything and you served it back.
-- Fix: Restrict types, scan, store outside web root, use signed URLs.
+## License
 
-[8] Insecure password handling
-
-- Problem: Plaintext or weak hashing, reused salts, no MFA.
-- Fix: Use bcrypt/argon2, strong policies, and MFA for sensitive actions.
-
-[9] Over-permissive tokens
-
-- Problem: Long-lived “god tokens” that worked everywhere.
-- Fix: Short-lived tokens, scoped permissions, refresh rotation.
-
-[10] Missing CSRF protections
-
-- Problem: Logged-in users could be tricked into triggering actions.
-- Fix: SameSite cookies, CSRF tokens, and avoid cookie auth for APIs.
-
-[11] Weak logging and no alerting
-
-- Problem: Breaches looked like normal traffic until it was too late.
-- Fix: Log auth events, admin actions, and anomaly alerts on spikes.
-
-[12] No safe defaults in infra
-
-- Problem: Public S3 buckets, open security groups, exposed DB ports.
-- Fix: Private by default, least privilege IAM, IaC scanning in CI.
-
-Vibe coding is fine for prototypes.
-
-But the moment you deploy, you are no longer “building an app.”
-You are operating an attack surface.
-
-Ship fast. Secure faster.
-
-### Add something like 'Guardrails for catastrophic usage anomalies' to avoid hyperusage by hacker and extra bill of usage if someone discover the key to the API. Considering stolen Gemini (or other) API key causing extra charges. Examples could be:
- - Automatic hard stop at 5x or 10x historical usage
- - Forced confirmation of extreme spikes
- - Temporary freeze pending review
- - Default per-API spending caps
+MIT
