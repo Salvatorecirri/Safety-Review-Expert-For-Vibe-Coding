@@ -1,6 +1,8 @@
 # Safety Review Expert for Vibe Coding Applications
 
-A collection of production-grade security and reliability skills for Claude Code and other AI agent terminals. Transform "vibe-coded" prototypes into hardened, production-ready applications by automating the discovery of 12 critical vulnerabilities and financial hyper-usage risks
+A collection of production-grade security and reliability skills for Claude Code and other AI agent terminals.
+
+Transform "vibe-coded" prototypes into hardened, production-ready applications by automating the discovery of critical vulnerabilities and financial hyper-usage risks.
 
 <p align="center">
   <img src="https://img.shields.io/badge/Scripts-security-blue" alt="Scripts Security" />
