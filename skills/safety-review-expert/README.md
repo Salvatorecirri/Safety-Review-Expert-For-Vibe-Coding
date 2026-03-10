@@ -55,6 +55,7 @@ The skill will automatically review your current git changes or the specified di
 ```
 safety-review-expert/
 |-- SKILL.md                 # Main skill definition
+|-- README.md                # Technical documentation for the specific auditor tool
 |-- agents/
 |   \-- agent.yaml           # Agent interface config
 \-- references/
