@@ -3,7 +3,7 @@
 A collection of production-grade security and reliability skills for Claude Code and other AI agent terminals. Transform "vibe-coded" prototypes into hardened, production-ready applications by automating the discovery of 12 critical vulnerabilities and financial hyper-usage risks
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Skills-3-blue" alt="Scripts Security" />
+  <img src="https://img.shields.io/badge/Scripts-security-blue" alt="Scripts Security" />
   <img src="https://img.shields.io/badge/License-MIT-yellow" alt="MIT License" />
   <img src="https://img.shields.io/badge/Focus-Vibe_to_Prod-blueviolet" alt="Focus: Vibe to Prod" />
 </p>
