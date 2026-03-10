@@ -1,14 +1,31 @@
-# Safety Review Expert for Vibe Coding Applications
+# Safety Review Expert for Vibe Coding
 
 A collection of production-grade security and reliability skills for Claude Code and other AI agent terminals.
 
-Transform "vibe-coded" prototypes into hardened, production-ready applications by automating the discovery of critical vulnerabilities and financial hyper-usage risks.
+**Transform "vibe-coded" prototypes into hardened, production-ready applications by automating the discovery of critical vulnerabilities and financial hyper-usage risks.**
 
 <p align="center">
   <img src="https://img.shields.io/badge/Scripts-security-blue" alt="Scripts Security" />
   <img src="https://img.shields.io/badge/License-MIT-yellow" alt="MIT License" />
   <img src="https://img.shields.io/badge/Focus-Vibe_to_Prod-blueviolet" alt="Focus: Vibe to Prod" />
 </p>
+
+## Close the "Vibe Gap"
+
+AI agents (Claude Code, Aider, Bolt) are incredible at building features at 10x speed. However, they often ignore the "boring" security essentials that lead to Financial Ruin and Data Breaks.
+
+Safety Review Expert act as a Senior Security Engineer that lives in your terminal. It audits AI-generated code for the "Dirty Dozen" vulnerabilities, race conditions, PII leaks, and—crucially—API Key Theft & Hyper-usage risks.
+
+Standard linters (ESLint, SonarQube) are great for syntax, but they don't understand the **intent** or **financial risk** of AI-generated code.
+
+| Feature | Standard Linters | Safety Review Expert |
+| :--- | :---: | :--- |
+| **Logic & Auth Bugs** | ✅ Basic | ✅ **Deep Audit** (BOLA/IDOR & Ownership focus) |
+| **AI Billing Risks** | ❌ No | ✅ **Cost Circuit Breakers** (Loop caps & Spend spikes) |
+| **Race Conditions** | ❌ No | ✅ **Concurrency Hunter** (TOCTOU & Atomic DB Ops) |
+| **Data Leakage** | ⚠️ Partial | ✅ **PII & Log Sanitization** (Automatic redaction) |
+| **Infra/Cloud Shell** | ❌ No | ✅ **Hardened Defaults** (HSTS, TLS 1.3 & Port Binding) |
+| **Supply Chain** | ⚠️ Basic | ✅ **Hallucination Guard** (Non-existent package detection) |
 
 ## Skills
 
