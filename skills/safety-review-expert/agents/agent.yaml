@@ -25,7 +25,10 @@ tools:
 references:
   - path: ../SKILL.md
   - path: ../references/vibe-check-12.md
+  - path: ../references/leak-prevention.md
+  - path: ../references/infra-hardening.md
   - path: ../references/catastrophic-usage.md
   - path: ../references/race-conditions.md
   - path: ../references/security-checklist.md
   - path: ../references/data-integrity.md
+  - path: ../references/pipeline-controls.md

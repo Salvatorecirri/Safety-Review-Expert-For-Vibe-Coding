@@ -59,12 +59,15 @@ safety-review-expert/
 |-- agents/
 |   \-- agent.yaml           # Agent interface config
 \-- references/
-    |-- vibe-check-12.md     # The 12 core vulnerabilities
-    |-- catastrophic-usage.md # Billing & hyper-usage guardrails
-    |-- race-conditions.md   # Concurrency & TOCTOU patterns
-    |-- security-checklist.md # Deep-dive security & reliability
-    |-- data-integrity.md    # Transactions & idempotency
-    \-- project-brain.md     # Custom stack & org rules
+    |-- vibe-check-12.md       # The 12 core vulnerabilities
+    |-- leak-prevention.md     # Secrets, PII, and response/log hygiene
+    |-- catastrophic-usage.md  # Billing & hyper-usage guardrails
+    |-- race-conditions.md     # Concurrency & TOCTOU patterns
+    |-- data-integrity.md      # Transactions & idempotency
+    |-- security-checklist.md  # Deep-dive security & reliability
+    |-- infra-hardening.md     # TLS, binding, IAM/DB least privilege
+    |-- pipeline-controls.md   # CI/CD scans, gates, authenticity
+    \-- project-brain.md       # Custom stack & org rules
 ```
 
 ## References
@@ -72,10 +75,13 @@ safety-review-expert/
 Each checklist provides detailed prompts and anti-patterns:
 
 - **vibe-check-12.md** - Core OWASP risks and rapid-prototyping errors.
+- **leak-prevention.md** - Secrets/PII scanning, artifact hygiene, response/log redaction.
 - **catastrophic-usage.md** - LLM loops, budget caps, and API credit draining.
 - **race-conditions.md** - Concurrency, database locking, and atomic state.
-- **security-checklist.md** - JWT confusion, XSS, SSRF, and crypto gaps.
 - **data-integrity.md** - Transactional safety and idempotency logic.
+- **security-checklist.md** - JWT confusion, XSS, SSRF, crypto gaps, ReDoS, dependency authenticity.
+- **infra-hardening.md** - TLS/HSTS, bind scope, CORS allowlists, least-privilege infra.
+- **pipeline-controls.md** - CI/CD gates for secrets, SAST/DAST, SCA, authenticity.
 
 ## License
 

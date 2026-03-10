@@ -21,10 +21,15 @@ Identify vulnerabilities that arise from rapid prototyping (vibe coding), specif
    - Specifically scan for "Catastrophic Usage" risks.
    - Flag calls to external LLM APIs (Gemini, OpenAI, etc.) that lack budget caps, rate limits, or usage-quota logic.
    - Identify if an attacker could drain your API credits via public endpoints.
+   - Enforce auto-freeze and manual `ADMIN_UNLOCK` on extreme spend spikes per `references/catastrophic-usage.md`.
 
 4. **Security & Reliability Deep Dive**:
-   - Reference `references/security-checklist.md` for XSS, Injection, SSRF, and JWT flaws.
+   - Reference `references/security-checklist.md` for XSS, Injection, SSRF, JWT flaws, ReDoS, and dependency authenticity.
    - Reference `references/race-conditions.md` to find TOCTOU (Time-of-Check to Time-of-Use) logic errors.
+   - Reference `references/leak-prevention.md` for secrets/PII hygiene, logging redaction, and response minimization.
+   - Reference `references/infra-hardening.md` for TLS/HSTS, bind scope, least-privilege IAM/DB, and prod CORS allowlists.
+   - Reference `references/pipeline-controls.md` for CI gates (gitleaks, SAST/DAST, SCA, artifact hygiene).
+   - Apply strict rate limits on `/login`, `/register`, and `/password-reset` per `references/vibe-check-12.md`.
 
 5. **Data Integrity & Runtime Risks**:
    - Scan for non-atomic database operations and missing transactions.

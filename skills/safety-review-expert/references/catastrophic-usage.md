@@ -29,3 +29,7 @@ Use this checklist to identify "Hyper-usage" risks where a hacker or a logic bug
 ## [7] Heavy Payload Denial of Service
 - **The Risk**: Allowing users to upload massive PDFs or images for AI "summarization" without size limits, leading to high processing costs.
 - **The Fix**: Limit file uploads to <5MB and check token counts before sending to the model.
+
+## [8] Extreme Usage Freeze & Confirmation
+- **The Risk**: Spend spikes >5-10x normal (e.g., >500% in one hour) draining budget before alerts are handled.
+- **The Fix**: Auto-freeze AI features when the threshold is hit and require a manual `ADMIN_UNLOCK`/runbook approval to resume; optionally prompt for confirmation on large step-changes before continuing.

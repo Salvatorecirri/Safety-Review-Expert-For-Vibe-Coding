@@ -21,6 +21,7 @@ Use this checklist to identify where "speed-to-market" has created an attack sur
 - **The Vibe**: "I don't have enough users for this to matter yet."
 - **Check**: Missing `express-rate-limit`, `bottleneck`, or Redis-based throttling.
 - **Fix**: Apply rate limits per IP/User to prevent brute force and scraping.
+- **Auth Endpoints**: Apply ultra-strict limits (e.g., 5 attempts/15 mins) on `/login`, `/register`, and `/password-reset`; global limits are insufficient to stop credential stuffing.
 
 ## [5] Wide-Open CORS
 - **The Vibe**: `res.setHeader('Access-Control-Allow-Origin', '*')` to fix local dev errors.

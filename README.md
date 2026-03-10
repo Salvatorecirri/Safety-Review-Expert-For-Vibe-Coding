@@ -12,7 +12,7 @@ A collection of production-grade security and reliability skills for Claude Code
 
 | Skill | Description | Install |
 |-------|-------------|---------|
-| [**Safety Review Expert**](./skills/safety-review-expert/) | Senior security auditor hunting for the "Dirty Dozen," race conditions, and AI billing risks | `npx skills add salvatorecirri/Safety-Review-Expert-Vibe-Coding --path skills/safety-review-expert` |
+| [**Safety Review Expert**](./skills/safety-review-expert/) | Senior security auditor hunting for the "Dirty Dozen," race conditions, leakage, infra gaps, and AI billing risks | `npx skills add salvatorecirri/Safety-Review-Expert-Vibe-Coding --path skills/safety-review-expert` |
 
 ## Quick Start
 

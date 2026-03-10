@@ -15,7 +15,15 @@ This reference covers technical implementation flaws in Input/Output, Authentica
 - **Path Traversal**:
     - **Check**: `fs.readFile('/path/' + user_input)`.
     - **Fix**: Sanitize paths and use an allowlist of directories.
-
+- **ReDoS (Regex Denial of Service)**:
+    - **Check**: Catastrophic-backtracking regexes on user input; unbounded input lengths.
+    - **Fix**: Use safe regexes or builders, add timeouts/input length limits, and prefer library validators.
+- **Unvalidated Redirects**:
+    - **Check**: User-controlled `next`/`redirect` params or `res.redirect(req.query.returnTo)`.
+    - **Fix**: Allowlist destinations or strip external hosts; default to a safe page.
+- **Leaky TODO/FIXME/HACK Comments**:
+    - **Check**: Comments that document bypasses or unfinished security work.
+    - **Fix**: Remove/redact before release or track in an issue, not in shipped code.
 
 
 ## [2] JWT & Token Security
@@ -33,6 +41,9 @@ This reference covers technical implementation flaws in Input/Output, Authentica
     - **Check**: Using `^` or `*` for critical security dependencies in `package.json`.
 - **Untrusted Sources**:
     - **Check**: Importing scripts from third-party CDNs without Subresource Integrity (SRI) hashes.
+- **Dependency Authenticity**:
+    - **Check**: Package names that don’t exist/are typosquats in the official registry or lack signature/SHASUM verification.
+    - **Fix**: Verify existence in the trusted registry, pin exact versions/hashes, and enable signature checks where supported.
 - **Outdated Packages**:
     - **Check**: Scan for packages with known CVEs (e.g., older versions of `lodash` or `express`).
 
@@ -50,6 +61,9 @@ This reference covers technical implementation flaws in Input/Output, Authentica
 - **Mode of Operation**: 
     - **Flag**: Use of `AES-ECB` mode (identical blocks produce identical ciphertext).
     - **Fix**: Use `AES-GCM` or `AES-CBC` with unique IVs.
+- **Deprecated Node Crypto APIs**:
+    - **Check**: `crypto.createCipher()` / `createDecipher()` usage.
+    - **Fix**: Use `crypto.createCipheriv` / `createDecipheriv` with random IVs and authenticated modes (GCM/CCM).
 
 
 
